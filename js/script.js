@@ -1,9 +1,15 @@
 let userAction_theme = false;
 let userAction_zoom = false;
 let themeData = null;
+let oldThema = null;
 
 $(function(){
-    defaultTheme();
+    setThemesOption(sendRequest());
+    const url = `themes/deleted.json.old`;
+    $.getJSON(url, (data) => {
+        oldThema = data.deleted;
+        defaultTheme();
+    });
 
     $('#textarea').keyup(function(){
         countText();
@@ -102,12 +108,12 @@ const defaultTheme = ()=>{
 
     pageZoom = zoom;
 
-    if(theme){
+    if(!theme || oldThema.includes(theme)){
+        changeTheme("default");
+        $("#themes option[value='default']").prop('selected', true);
+    }else{
         changeTheme(theme);
         $(`#themes option[value='${theme}']`).prop('selected', true);
-    }else{
-        changeTheme("1");
-        $("#themes option[value='1']").prop('selected', true);
     }
     if(zoom){
         $("body").css("zoom", `${zoom}%`);
@@ -116,10 +122,15 @@ const defaultTheme = ()=>{
         $("body").css("zoom", "100%");
         $("#zoom option[value='100']").prop('selected', true);
     }
+
+    if(oldThema.includes(theme)){
+        window.alert("お使いのテーマが変更もしくは削除されたため、設定がリセットされました。");
+        saveSetting();
+    }
 }
 
-const changeTheme = (number)=>{
-    const url = `themes/theme-${number}.json`
+const changeTheme = (themaName)=>{
+    const url = `themes/${themaName}.json`;
     $.getJSON(url, (data) => {
 
         themeData = data;
@@ -152,4 +163,48 @@ const changeTheme = (number)=>{
         $(".copy_text").text(data.texts.copy);
         $(".save_text").text(data.texts.save);
     });
+}
+
+const createXmlHttpRequest = ()=>{
+    var xmlhttp=null;
+    if(window.ActiveXObject)
+    {
+        try
+        {
+            xmlhttp=new ActiveXObject("Msxml2.XMLHTTP");
+        }
+        catch(e)
+        {
+            try
+            {
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            catch (e2)
+            {
+            }
+        }
+    }
+    else if(window.XMLHttpRequest)
+    {
+        xmlhttp = new XMLHttpRequest();
+    }
+    return xmlhttp;
+}
+
+const sendRequest = ()=>{
+    const xmlhttp = createXmlHttpRequest();
+    if(xmlhttp != null){
+        xmlhttp.open("POST", "./php/get_thema.php", false);
+        xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        const data = "data=get";
+        xmlhttp.send(data);
+        const res = xmlhttp.responseText;
+        return(res);
+    }else{
+        return(undefined);
+    }
+}
+
+const setThemesOption = (html)=>{
+    $('#themes').append(html);
 }
