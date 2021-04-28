@@ -1,0 +1,20 @@
+{
+    "name": "Text counter",
+    "short_name": "counter",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#444444",
+    "theme_color": "#444444",
+    "icons": [
+    {
+        "src": "img/icons-192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+    },
+    {
+        "src": "img/icons-512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+    }
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "name": "スタンダード1",
+    "type": "standard",
+    "colors": {
+        "main": "#4d32e6",
+        "second": "#ffff00",
+        "black": "#000000",
+        "white": "#ffffff",
+        "dark_white": "#f3f3f3",
+        "shadow": "#00000033"
+    },
+    "fonts": {
+        "main": "'Dela Gothic One'",
+        "second": "cursive",
+        "textarea": "'Noto Sans JP'",
+        "textarea_sub": "sans-serif"
+    },
+    "texts": {
+        "copy": "コピーする！",
+        "save": "保存する！"
+    }
+}

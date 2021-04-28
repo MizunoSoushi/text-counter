@@ -1,0 +1,22 @@
+{
+    "name": "スタンダード2",
+    "type": "standard",
+    "colors": {
+        "main": "#e6329b",
+        "second": "#00ffaa",
+        "black": "#000000",
+        "white": "#ffffff",
+        "dark_white": "#f3f3f3",
+        "shadow": "#00000033"
+    },
+    "fonts": {
+        "main": "'DotGothic16'",
+        "second": "sans-serif",
+        "textarea": "'Noto Sans JP'",
+        "textarea_sub": "sans-serif"
+    },
+    "texts": {
+        "copy": "Copy",
+        "save": "Save"
+    }
+}

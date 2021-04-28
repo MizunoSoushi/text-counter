@@ -1,0 +1,311 @@
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=DotGothic16&family=Noto+Sans+JP&family=Noto+Serif+JP:wght@500&display=swap');
+:root {
+    --main-color: #4d32e6;
+    --second-color: #ffff00;
+    --black-color: #000000;
+    --white-color: #ffffff;
+    --dark-white-color: #f3f3f3;
+    --object-text-color: #ffffff;
+    --sub-object-text-color: #000000;
+    --shadow-color: #00000033;
+    --main-font: 'Dela Gothic One';
+    --second-font: cursive;
+    --textarea-font: 'Noto Sans JP';
+    --textarea-sub-font: sans-serif;
+}
+
+html,body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+html,body,#wrap_app,#wrap_setting{
+    height: 100%;
+}
+
+body{
+    color: var(--black-color);
+}
+
+#wrap_section,#textarea{
+    background: var(--white-color);
+}
+
+body,#wrap_option{
+    background: var(--dark-white-color);
+}
+
+/*Font指定*/
+.monitor p, .bottom_button{
+    font-family: var(--main-font), var(--second-font);
+}
+
+#textarea, #wrap_option{
+    font-family: var(--textarea-font), var(--textarea-sub-font);
+}
+
+.monitor{
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 80px;
+    background: var(--white-color);
+    box-shadow: 0 4px 10px var(--shadow-color);
+    z-index: 1;
+}
+.monitor p{
+    display: block;
+    position: relative;
+    width: calc(100% - 160px);
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    margin: 0 auto;
+    padding: 10px 0;
+    font-size: 40px;
+}
+
+/*ヘッダーボタン装飾*/
+.header_button{
+    display: block;
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    margin: 10px;
+    top: 0;
+    text-align: center;
+    line-height: 60px;
+    font-size: 28px;
+    color: var(--black-color);
+    background: var(--white-color);
+    border-radius: 50%;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.header_button:hover{
+    background: var(--dark-white-color);
+}
+.setting_button{
+    right: 0;
+}
+.back_button{
+    left: 0;
+}
+
+/*メイン部分装飾*/
+#textarea{
+    display: block;
+    position: relative;
+    resize: none;
+    width: calc(100% - 40px);
+    height: calc(100% - 120px);
+    border: none;
+    margin: 0;
+    padding: 20px;
+    color: var(--black-color);
+    font-size: 20px;
+    transition: height 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.on #textarea{
+    height: calc(100% - 200px);
+    transition: height 0.3s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+.bottom_button{
+    display: block;
+    position: fixed;
+    bottom: -80px;
+    right: 0;
+    width: 100%;
+    height: 80px;
+    background: var(--main-color);
+    text-align: center;
+    line-height: 80px;
+    color: var(--white-color);
+    cursor: pointer;
+    font-size: 28px;
+    transition: 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.bottom_button::before{
+    content: " ";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 80px;
+    background: var(--second-color);
+    transform-origin: 50% 100%;
+    transform: scale(1,0);
+    transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.bottom_button:hover::before{
+    transform-origin: 50% 0%;
+    transform: scale(1,1);
+    transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.copy_button{
+    bottom: -80px;
+}
+.on .copy_button{
+    bottom: 0px;
+    transition: 0.3s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+
+.save_button{
+    bottom: 0;
+}
+.copy_text, .save_text{
+    position: relative;
+    color: var(--object-text-color);
+    transition: 0.1s;
+    z-index: 1;
+    user-select: none;
+}
+.bottom_button:hover .copy_text, .bottom_button:hover .save_text{
+    color: var(--sub-object-text-color);
+}
+
+/*設定画面の装飾*/
+#wrap_option{
+    display: block;
+    position: relative;
+    padding: 30px;
+    width: calc(100% - 60px);
+    height: calc(100% - 220px);
+}
+#wrap_section{
+    display: block;
+    position: relative;
+    padding: 16px;
+    margin: 0 auto 20px;
+    width: calc(100% - 32px);
+    max-width: 1000px;
+    box-shadow: 0 3px 6px var(--shadow-color);
+    border-radius: 10px;
+}
+#wrap_section h2{
+    display: block;
+    position: relative;
+    margin: 0 0 4px;
+}
+.select_box{
+    width: 200px;
+    height: 40px;
+    padding: 4px 10px;
+    background: #f3f3f3;
+    border: none;
+    border-radius: 20px;
+}
+
+.big {
+    font-size: 1.2em;
+}
+
+/*
+Copyright (c) 2013 Silver Drop
+Released under the MIT license
+http://opensource.org/licenses/mit-license.php
+*/
+/* Custom dropdown */
+.custom-dropdown {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 10px; /* demo only */
+}
+
+.custom-dropdown select {
+    background-color: var(--main-color);
+    color: var(--object-text-color);
+    font-size: inherit;
+    padding: .5em;
+    padding-right: 2.5em;	
+    border: 0;
+    margin: 0;
+    border-radius: 3px;
+    text-indent: 0.01px;
+    text-overflow: '';
+    -webkit-appearance: none;/* hide default arrow in chrome OSX */
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.custom-dropdown::before,
+.custom-dropdown::after {
+    content: "";
+    position: absolute;
+    pointer-events: none;
+}
+
+.custom-dropdown::after { /*  Custom dropdown arrow */
+    content: "\25BC";
+    height: 1em;
+    font-size: .625em;
+    line-height: 1;
+    right: 1.2em;
+    top: 50%;
+    margin-top: -.5em;
+}
+
+.custom-dropdown::before { /*  Custom dropdown arrow cover */
+    width: 2em;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border-radius: 0 3px 3px 0;
+}
+
+.custom-dropdown select[disabled] {
+    color: rgba(0,0,0,.3);
+}
+
+.custom-dropdown select[disabled]::after {
+    color: rgba(0,0,0,.1);
+}
+
+.custom-dropdown::before {
+    background-color: rgba(0,0,0,.15);
+}
+
+.custom-dropdown::after {
+    color: rgba(0,0,0,.4);
+}
+
+:focus{
+    outline: none;
+}
+
+/*文字選択時の色*/
+::selection {
+    background: var(--second-color);
+    color: var(--sub-object-text-color);
+}
+
+::-moz-selection {
+    background: var(--second-color);
+    color: var(--sub-object-text-color);
+}
+
+/*設定部分を非表示*/
+#wrap_setting{
+    display: block;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    z-index: 2;
+}
+#wrap_setting .bottom_button{
+    right: -100%;
+}
+
+#wrap_setting, #wrap_setting .bottom_button{
+    transition: right 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.setting #wrap_setting,.setting #wrap_setting .bottom_button{
+    right: 0;
+    transition: right 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}

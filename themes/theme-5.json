@@ -1,0 +1,22 @@
+{
+    "name": "モノトーン(明)",
+    "type": "mono",
+    "colors": {
+        "main": "#eeeeee",
+        "second": "#727272",
+        "black": "#000000",
+        "white": "#ffffff",
+        "dark_white": "#ffffff",
+        "shadow": "#00000033"
+    },
+    "fonts": {
+        "main": "'Noto Sans JP'",
+        "second": "sans-serif",
+        "textarea": "'Noto Sans JP'",
+        "textarea_sub": "sans-serif"
+    },
+    "texts": {
+        "copy": "コピー",
+        "save": "保存"
+    }
+}

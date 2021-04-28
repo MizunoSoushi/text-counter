@@ -1,0 +1,22 @@
+{
+    "name": "シンプル",
+    "type": "standard",
+    "colors": {
+        "main": "#3286e6",
+        "second": "#6ee9ff",
+        "black": "#000000",
+        "white": "#ffffff",
+        "dark_white": "#f3f3f3",
+        "shadow": "#00000033"
+    },
+    "fonts": {
+        "main": "'Noto Sans JP'",
+        "second": "sans-serif",
+        "textarea": "'Noto Sans JP'",
+        "textarea_sub": "sans-serif"
+    },
+    "texts": {
+        "copy": "コピー",
+        "save": "保存"
+    }
+}

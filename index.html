@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="counter">
+    <!--Twitter card-->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="そうくん">
+    <meta name="twitter:title" content="Text counter">
+    <meta name="twitter:description" content="シンプルなデザインが特徴の文字数計測アプリです！">
+    <meta name="twitter:image" content="https://app.soukun.work/counter/img/icons-512.png">
+    <title>文字数カウンター</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="img/icons-152.png">
+</head>
+<body>
+    <div id="wrap_app">
+        <div class="monitor">
+            <p id="count">0</p>
+            <div class="setting_button header_button"><i class="fas fa-cog"></i></div>
+        </div>
+        <textarea name="textarea" id="textarea" placeholder="ここへ入力、もしくは貼り付け！"></textarea>
+        <div class="copy_button bottom_button"><spna class="copy_text">コピーする！</spna></div>
+    </div>
+    <div id="wrap_setting">
+        <div class="monitor">
+            <div class="back_button header_button"><i class="fas fa-arrow-left"></i></div>
+            <p id="title">設定</p>
+        </div>
+        <div id="wrap_option">
+            <div id="wrap_section">
+                <h2>テーマ</h2>
+                <span class="custom-dropdown big">
+                    <select id="themes" name="themes" class="select_box">
+                        <option value="1">スタンダード1</option>
+                        <option value="2">スタンダード2</option>
+                        <option value="3">シンプル</option>
+                        <option value="4">明朝</option>
+                        <option value="5">モノトーン（明）</option>
+                        <option value="6">モノトーン（暗）</option>
+                    </select>
+                </span>
+            </div>
+            <div id="wrap_section">
+                <h2>拡大・縮小</h2>
+                <span class="custom-dropdown big">
+                    <select id="zoom" name="zoom" class="select_box">
+                        <option value="125">125%</option>
+                        <option value="100">100%</option>
+                        <option value="75">75%</option>
+                        <option value="50">50%</option>
+                    </select>
+                </span>
+            </div>
+        </div>
+        <div class="save_button bottom_button"><spna class="save_text">保存する！</spna></div>
+    </div>
+    <script src="https://kit.fontawesome.com/9dacc9a3b2.js" crossorigin="anonymous"></script>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        window.addEventListener('load', () => {
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker
+                    .register('sw.js')
+                    .then(registration => console.log('registered', registration))
+                    .catch(error => console.log('error', error));
+            }
+        });
+    </script>
+</body>
+</html>

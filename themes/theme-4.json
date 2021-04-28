@@ -1,0 +1,22 @@
+{
+    "name": "明朝",
+    "type": "standard",
+    "colors": {
+        "main": "#421f0f",
+        "second": "#63b158",
+        "black": "#000000",
+        "white": "#ffffff",
+        "dark_white": "#f3f3f3",
+        "shadow": "#00000033"
+    },
+    "fonts": {
+        "main": "'Noto Serif JP'",
+        "second": "serif",
+        "textarea": "'Noto Serif JP'",
+        "textarea_sub": "serif"
+    },
+    "texts": {
+        "copy": "コピー",
+        "save": "保存"
+    }
+}
